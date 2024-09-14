@@ -1,0 +1,81 @@
+/* home.page.scss */
+
+/* Estilo para el contenedor del logo con animación */
+.logo-container {
+  position: fixed; /* Fija el contenedor en su lugar */
+  margin-top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  z-index: 10; /* Asegura que el logo esté encima del contenido */
+}
+
+/* Estilo para el logo */
+.login img {
+  width: 100px; /* Ajusta el ancho según el tamaño de tu imagen */
+  height: 100px; /* Ajusta la altura según el tamaño de tu imagen */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  /* Animación CSS */
+  animation: logoAnimation 4s infinite; /* Duración y número de iteraciones */
+}
+
+/* Definición de la animación en CSS */
+@keyframes logoAnimation {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.75);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Estilo para el contenedor del contenido de login */
+.login-container {
+  padding-top: 250px; /* Ajusta el espacio superior para que no se superponga con el logo */
+}
+
+/* Estilo para el contenedor de botones */
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Distribuye el espacio entre los botones */
+  gap: 10px; /* Espacio entre los botones */
+  margin-top: 10px; /* Espacio superior para separar de otros elementos */
+}
+
+.button-container ion-button {
+  flex: 1; /* Los botones ocupan el mismo espacio disponible */
+}
+
+/* Contenedor del spinner de carga */
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  height: 120px; /* Ajusta la altura según sea necesario */
+  overflow: hidden; /* Oculta cualquier contenido que se salga del contenedor */
+  text-align: center; /* Centra el texto dentro del contenedor */
+}
+
+/* Ajusta el tamaño del spinner */
+.spinner-container mat-spinner {
+  width: 20px; /* Tamaño del spinner */
+  height: 20px; /* Tamaño del spinner */
+  margin-top: 10px; /* Espaciado entre el texto y el spinner */
+}
+
+/* Asegúrate de que el contenedor del item de carga esté centrado y contenido */
+ion-item#carga {
+  width: 100%; /* Asegura que el item ocupe todo el ancho disponible */
+  text-align: center; /* Centra el contenido dentro del item */
+}
